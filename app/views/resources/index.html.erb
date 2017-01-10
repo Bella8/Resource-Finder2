@@ -1,0 +1,19 @@
+<section class="show-body">
+  <div class="small-12 medium-6 large-6 columns" class="float-right">
+    <%# @data.address  %>
+    <% @data.each do |item|%>
+    <div class="column">
+      <ul>
+        <li><b><%= item.agency %></b></li>
+        <li><%= item.division %></li>
+        <li><%= item.program_model %></li>
+        <li><%= item.site_name %></li>
+        <li><%= item.phone_number %></li>
+        <li><%= item.address %>., &nbsp <%= item.city %>, &nbsp <%= item.state %> &#160 <%= item.zip %></li>
+      </ul>
+    </div>
+    <%end %>
+    <br>
+    <br>
+  </div>
+</section>
