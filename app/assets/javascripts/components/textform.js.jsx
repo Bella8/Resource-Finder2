@@ -4,7 +4,6 @@ var TextForm = React.createClass({
     value: React.PropTypes.number,
 
   },
-  
   render: function() {
     return(
       <div className="row">
@@ -12,7 +11,7 @@ var TextForm = React.createClass({
           <div className="form-group">
             <label htmlFor='name'>
               <p>{this.props.question}</p>
-              <input id='name' name='name' type='text'  />
+              <input ref="inputtest" id='name' name='name' type='text'  />
             </label>
           </div>
         </div>

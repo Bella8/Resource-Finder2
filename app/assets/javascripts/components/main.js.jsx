@@ -2,13 +2,24 @@ var Main = React.createClass({
 
   handleFormSubmit: function (formSubmitEvent) {
     formSubmitEvent.preventDefault();
-    var testtwo = this.refs.radiovalues.state;
-    var input=  this.refs.input.value;
-    //   testtwo.value ="";
-    //  this.props.onSubmit(testtwo)
-
-    console.log('You have selected:', testtwo);
+    // var testtwo = this.refs.radiovalueOne.state;
+    // var testthree = this.refs.radiovalueTwo.state;
+    // var caseid = this.refs.caseid.refs.inputtest.value;
+    // // inputtest
+    // // var input= this.state.value;
+    // //   testtwo.value ="";
+    // //  this.props.onSubmit(testtwo)
+    //
+    // console.log('You have selected:', testtwo, testthree);
+    // console.log('input:', caseid);
+    // console.log(this.refs);
+    // var output = this.ref.map(function(key, value){
+    //   console.log(key, value);
+    // )},
   },
+
+
+  //loop through it and put it into a hash with key value.
   //Todo implement cler form.
   // handleClearForm: function (formCrearEvent){
   //   formCrearEvent.preventDefault();
@@ -28,20 +39,21 @@ var Main = React.createClass({
         <div className="small-12 small-centered medium-9 medium-centered columns ">
           <form onSubmit={this.handleFormSubmit}>
             <h5 className="text-center">Please answer all the questions.</h5>
+
             <div className="row column main-form">
-              <TextForm question="Client Case:" />
-              <TextForm question="Client zip code:
-                " />
-              <Question ref="radiovalues" question="Client current housing type?
+
+                <TextForm ref="caseid" placeholder='Case Id' question="Client Case:"/>
+
+              <Question ref="radiovalueOne" question="Client current housing type?
                 " answers = {answers} name= "questionFour"/>
-              <Question ref="radiovalues" question="Is client a victim of domestic violence?
+
+              <Question ref="radiovalueTwo" question="Is client a victim of domestic violence?
                 " answers = {answersYN} name= "questionFive"/>
-              <Question ref="radiovalues" question="Client employment status?
-                " answers = {answersYN} name= "questionsix"/>
-              <Question ref="radiovalues" question="Does client have health insurance?" answers = {answersYN} name= "questionseven"/>
-              <Question ref="radiovalues" question="Does client recieve SNAP benefits?" answers = {answersYN} name= "questioneight"/>
-              <Question ref="radiovalues" question="Does client have child (or children) under the age of 13?" answers = {answersYN} name= "questionnine"/>
-              <a role="button" aria-label="submit form" href="#" className="button float-right">Submit</a>
+
+                <input
+    					type="submit"
+    					className="btn btn-primary float-right"
+    					value="Submit"/>
 
               <button
                 className="btn btn-link float-left"
@@ -50,7 +62,9 @@ var Main = React.createClass({
             </div>
           </form>
         </div>
-      </div>      
+
+        <Body />
+      </div>
     )
   }
 });
