@@ -7,9 +7,9 @@ var Question = React.createClass({
   },
 
   handleChange: function (event) {
-      this.setState({value: event.target.value});
-      console.log(event.target.value);
-    },
+    this.setState({value: event.target.value});
+    console.log(event.target.value);
+  },
 
   render: function() {
     var props = this.props;
@@ -17,17 +17,23 @@ var Question = React.createClass({
 
     var answerElements = this.props.answers.map(function(answer, i){
       return(
-
-        <li key={i}><input  onClick={change} type="radio" name={props.name} value={answer} ref="test" id={i}  /> <label>{answer}</label></li>
-
-        )
-      });
-
-      return(
-       <fieldset className="RadioSet">
-          <legend>{this.props.question}</legend>
-          <ul>{answerElements}</ul>
-        </fieldset>
+        <div key={i} className="row">
+          <div className="small-12 medium-6 columns">
+            <li><input  onClick={change} type="radio" name={props.name} value={answer} ref="test" id={i}  /> <label>{answer}</label></li>
+          </div>
+        </div>  
       )
-    }
-  });
+    });
+
+    return(
+      <div className="row">
+        <div className="small-12 medium-8 columns">
+          <fieldset className="RadioSet">
+            <legend>{this.props.question}</legend>
+            <ul>{answerElements}</ul>
+          </fieldset>
+        </div>
+      </div>
+    )
+  }
+});
