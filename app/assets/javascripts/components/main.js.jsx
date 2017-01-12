@@ -12,13 +12,23 @@ var Main = React.createClass({
     //
     // console.log('You have selected:', testtwo, testthree);
     // console.log('input:', caseid);
-    // console.log(this.refs);
-    // var output = this.ref.map(function(key, value){
-    //   console.log(key, value);
-    // )},
+    let values = this.getAllValues();
+    // console.log(values);
+    // $.ajax({
+    //   url: "/api/v1/items.json",
+    //   type: 'POST',
+    //   data: {item:{ }}
+    // });
+    // let strVal = JSON.stringify(values)
+    // //send to url
+    // let url = "/api/v1/items.json"
+
+
+    // var output = this.ref.map(function(name, index){
+    //   return  key={ index }>{name};
+      // console.log(key);
+    // })
   },
-
-
   //loop through it and put it into a hash with key value.
   //Todo implement cler form.
   // handleClearForm: function (formCrearEvent){
@@ -26,13 +36,30 @@ var Main = React.createClass({
   //   var clearform = this.refs.radiovalues.state="";
   //   console.log('this form has been clear', clearform)
   // },
-
+  getAllValues: function() {
+    return this.refs.questions.getValues();
+    // return this.refs.questions.getValues();
+  },
   render: function() {
-    var answers = [	"Homeless/Live in a shelter",
-    "transitional housing", "Renting", "Other"];
-    var answersYN = [	"Yes",
-    "No"];
-    var answersThree = ["Employed","Underemployed", "Out of work – looking for work", "Out of work – not currently looking for work"]
+    let questionData = [
+      {
+        name:"clientcase",
+        header:"Client Case",
+        type:"text"
+      },
+      {
+        name:"housingtype",
+        header:"Housing Type",
+        type:"select",
+        answers:["Transitional Housing", "Renting", "Other"]
+      },
+      {
+        name:"domesticviolence",
+        header:"Is client a victim of domestic violence?",
+        type:"select",
+        answers:["Yes","No"]
+      }
+    ]
 
     return(
       <div className="row">
@@ -42,15 +69,9 @@ var Main = React.createClass({
 
             <div className="row column main-form">
 
-                <TextForm ref="caseid" placeholder='Case Id' question="Client Case:"/>
+              <QuestionForm questions={questionData} ref="questions"/>
 
-              <Question ref="radiovalueOne" question="Client current housing type?
-                " answers = {answers} name= "questionFour"/>
-
-              <Question ref="radiovalueTwo" question="Is client a victim of domestic violence?
-                " answers = {answersYN} name= "questionFive"/>
-
-                <input
+              <input ref="answer"
     					type="submit"
     					className="btn btn-primary float-right"
     					value="Submit"/>
@@ -62,7 +83,6 @@ var Main = React.createClass({
             </div>
           </form>
         </div>
-
         <Body />
       </div>
     )
