@@ -4,13 +4,18 @@ var TextForm = React.createClass({
     question: React.PropTypes.string,
     value: React.PropTypes.number,
   },
+
   updateState: function (event) {
     this.setState({value: event.target.value});
     console.log(event.target.value);
   },
+
+
   getValue: function() {
-    return this.refs.textinput.value;
+    // return this.refs.textinput.value;
+       return this.refs.textinput.value;
   },
+
   render: function() {
     return(
       <div>
@@ -26,7 +31,7 @@ var TextForm = React.createClass({
 
                 <p>{this.props.question}</p>
 
-                <input ref="textinput" id='name' name='name' type='text' onChange={this.updateState} />
+                <input ref="textinput" id='name' name='name' type='text' onChange={this.updateState}  />
 
               </label>
             </div>

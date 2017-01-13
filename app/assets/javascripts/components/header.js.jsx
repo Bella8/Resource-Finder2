@@ -1,8 +1,10 @@
 var Header = React.createClass({
   render() {
     return (
-      <div>
-        <h1>Hello, World!</h1>
+      <div className="header">
+        <h5>RESOURCE FINDER</h5>
+        <br/>
+        <br/>
         </div>
       )
     }

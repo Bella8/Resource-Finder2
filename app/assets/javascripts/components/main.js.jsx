@@ -2,16 +2,7 @@ var Main = React.createClass({
 
   handleFormSubmit: function (formSubmitEvent) {
     formSubmitEvent.preventDefault();
-    // var testtwo = this.refs.radiovalueOne.state;
-    // var testthree = this.refs.radiovalueTwo.state;
-    // var caseid = this.refs.caseid.refs.inputtest.value;
-    // // inputtest
-    // // var input= this.state.value;
-    // //   testtwo.value ="";
-    // //  this.props.onSubmit(testtwo)
-    //
-    // console.log('You have selected:', testtwo, testthree);
-    // console.log('input:', caseid);
+
     let values = this.getAllValues();
     // console.log(values);
     // $.ajax({
@@ -23,39 +14,67 @@ var Main = React.createClass({
     // //send to url
     // let url = "/api/v1/items.json"
 
-
-    // var output = this.ref.map(function(name, index){
-    //   return  key={ index }>{name};
-      // console.log(key);
-    // })
   },
   //loop through it and put it into a hash with key value.
-  //Todo implement cler form.
+  // TODO:  implement cler form.
   // handleClearForm: function (formCrearEvent){
   //   formCrearEvent.preventDefault();
-  //   var clearform = this.refs.radiovalues.state="";
+  //   var clearform = this.setState({value: null})
   //   console.log('this form has been clear', clearform)
   // },
+
   getAllValues: function() {
     return this.refs.questions.getValues();
     // return this.refs.questions.getValues();
   },
+
   render: function() {
     let questionData = [
       {
         name:"clientcase",
-        header:"Client Case",
-        type:"text"
+        header:"Client Client ID",
+        type:"text",
+        placeholder: "Case ID"
       },
       {
-        name:"housingtype",
+        name:"zip",
+        header:"Client zip code",
+        type:"text",
+        placeholder: "zip"
+      },
+      {
+        name:"Homeless Services",
         header:"Housing Type",
         type:"select",
-        answers:["Transitional Housing", "Renting", "Other"]
+        answers:["Homeless", "Emergency shelter", "Transitional Housing", "Renting", "Other"]
       },
       {
-        name:"domesticviolence",
+        name:"Domestic Violence",
         header:"Is client a victim of domestic violence?",
+        type:"select",
+        answers:["Yes","No"]
+      },
+      {
+        name:"Workforce Services",
+        header:"Client employment status?",
+        type:"select",
+        answers:["Employed", "Underemployed", "Out of work – looking for work", "Out of work – not currently looking for work"]
+      },
+      {
+        name:"healthinsurance",
+        header:"Does client have health insurance?",
+        type:"select",
+        answers:["Yes","No"]
+      },
+      {
+        name:"SNAPbenefits",
+        header:"Does client recieve SNAP benefits?",
+        type:"select",
+        answers:["Yes","No"]
+      },
+      {
+        name:"children",
+        header:"9. Does client have child (or children) under the age of 13?",
         type:"select",
         answers:["Yes","No"]
       }
@@ -63,9 +82,10 @@ var Main = React.createClass({
 
     return(
       <div className="row">
+        <Header/>
         <div className="small-12 small-centered medium-9 medium-centered columns ">
+          <h5 className="text-center" id="form-header" >Please answer all the questions</h5>
           <form onSubmit={this.handleFormSubmit}>
-            <h5 className="text-center">Please answer all the questions.</h5>
 
             <div className="row column main-form">
 

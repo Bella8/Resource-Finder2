@@ -5,11 +5,18 @@ var SelectForm = React.createClass({
     answers: React.PropTypes.arrayOf(React.PropTypes.string),
     value: React.PropTypes.string
   },
+
+
+
   getValue: function() {
     // return this.props.value;
     // console.log(this.props.value);
-    return this.refs.radioselect.value
+    // return this.refs.radioselect.value
+    return this.state.value
   },
+
+
+
   handleChange: function (event) {
     this.setState({value: event.target.value});
     console.log(event.target.value);
@@ -25,7 +32,7 @@ var SelectForm = React.createClass({
     var answerElements = this.props.answers.map(function(answer, i){
       return(
         <div key={i} className="row">
-          <div className="small-12 medium-6 columns">
+          <div className="small-12 medium-12 columns">
             <li><input onClick={change} type="radio" name={props.name} value={answer} ref="radioselect" id={i}  /><label>{answer}</label></li>
           </div>
         </div>
