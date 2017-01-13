@@ -6,8 +6,6 @@ var SelectForm = React.createClass({
     value: React.PropTypes.string
   },
 
-
-
   getValue: function() {
     // return this.props.value;
     // console.log(this.props.value);
@@ -15,10 +13,9 @@ var SelectForm = React.createClass({
     return this.state.value
   },
 
-
-
   handleChange: function (event) {
-    this.setState({value: event.target.value});
+    this.props.onChange(this.props.name, event.target.value);
+    //this.setState({value: event.target.value});
     console.log(event.target.value);
   },
 
@@ -33,7 +30,7 @@ var SelectForm = React.createClass({
       return(
         <div key={i} className="row">
           <div className="small-12 medium-12 columns">
-            <li><input onClick={change} type="radio" name={props.name} value={answer} ref="radioselect" id={i}  /><label>{answer}</label></li>
+            <li><input onClick={change} type="radio" name={props.name} value={answer} ref="radioselect" id={i} /><label>{answer}</label></li>
           </div>
         </div>
       )

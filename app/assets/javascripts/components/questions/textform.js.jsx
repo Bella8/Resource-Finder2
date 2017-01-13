@@ -6,10 +6,10 @@ var TextForm = React.createClass({
   },
 
   updateState: function (event) {
-    this.setState({value: event.target.value});
+    this.props.onChange(this.props.name, event.target.value);
+    //this.setState({value: event.target.value});
     console.log(event.target.value);
   },
-
 
   getValue: function() {
     // return this.refs.textinput.value;
