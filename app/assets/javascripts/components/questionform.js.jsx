@@ -1,7 +1,4 @@
 var QuestionForm = React.createClass({
-  // propTypes:{
-  //   forms: React.PropTypes.arrayOf(React.PropTypes.string)
-  // },
 
   getValues: function() {
     // console.log(this.name);

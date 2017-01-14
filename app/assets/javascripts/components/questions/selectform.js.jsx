@@ -1,18 +1,17 @@
 var SelectForm = React.createClass({
+  // typechecking on the props for this component
   propTypes:{
     name: React.PropTypes.string,
     question: React.PropTypes.string,
     answers: React.PropTypes.arrayOf(React.PropTypes.string),
     value: React.PropTypes.string
   },
-
+   //returing the value that is selected via value.
+   //could also be done via refs, but not best practice.
   getValue: function() {
-    // return this.props.value;
-    // console.log(this.props.value);
-    // return this.refs.radioselect.value
     return this.state.value
   },
-
+  // loging the the slected value when it there is a select event.
   handleChange: function (event) {
     this.props.onChange(this.props.name, event.target.value);
     //this.setState({value: event.target.value});
@@ -20,16 +19,19 @@ var SelectForm = React.createClass({
   },
 
   render: function() {
+    //declaring this above becuase it won't be recognized unless it is declared above.
     var props = this.props;
     var thisName = this.props.name;
-    console.log(props);
-    console.log(thisName);
+    // console.log(props);
+    // console.log(thisName);
     var change = this.handleChange;
 
+//looping through the answers
     var answerElements = this.props.answers.map(function(answer, i){
       return(
         <div key={i} className="row">
           <div className="small-12 medium-12 columns">
+
             <li><input onClick={change} type="radio" name={props.name} value={answer} ref="radioselect" id={i} /><label>{answer}</label></li>
           </div>
         </div>
@@ -39,14 +41,15 @@ var SelectForm = React.createClass({
     return(
       <div>
         <div className="row">
-          {this.props.header}
+
+          {props.header}
         </div>
         <div className="row">
           <div className="small-12 medium-8 columns">
             <fieldset className="RadioSet">
 
-              <legend>{this.props.question}</legend>
-
+              <legend>{props.question}</legend>
+              
               <ul>{answerElements}</ul>
 
             </fieldset>

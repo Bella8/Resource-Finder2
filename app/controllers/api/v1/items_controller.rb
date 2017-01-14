@@ -20,6 +20,6 @@ class Api::V1::ItemsController < Api::V1::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:id, :name, :description)
+    params.require(:item).permit(:date, :caseid, :zip, :housing, :dv, :employment, :insurance, :snap, :child)
   end
 end
