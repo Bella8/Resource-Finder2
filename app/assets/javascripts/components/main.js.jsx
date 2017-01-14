@@ -72,12 +72,12 @@ var Main = React.createClass({
 
     console.log("this is submitted info", this.state);
 
-    $.ajax({
-      url: "/api/v1/items.json",
-      type: 'POST',
-      // data: {item:{"housing": "Homeless"}}
-      data: {item: data}
-    });
+    // $.ajax({
+    //   url: "/api/v1/items.json",
+    //   type: 'POST',
+    //   // data: {item:{"housing": "Homeless"}}
+    //   data: {item: data}
+    // });
 
   },
   // TODO:  implement cler form.
@@ -122,7 +122,7 @@ var Main = React.createClass({
       <div className="row">
         <Header/>
         <div className="small-12 small-centered medium-9 medium-centered columns ">
-          <h5 className="text-center" id="form-header" >Please answer all the questions</h5>
+          <h5 className="text-center" >Please answer all the questions</h5>
           <form onSubmit={this.handleFormSubmit}>
 
             <div className="row column main-form">

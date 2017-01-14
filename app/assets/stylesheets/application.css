@@ -36,3 +36,12 @@ body {
 #form-header{
   color: white;
 }
+
+.agencies {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: white;
+  margin: 8px 20px;
+  /*height: 80vh;*/
+}
