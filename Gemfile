@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'stormpath-rails', '~> 2.5.0'
+
 gem 'responders'
 # Use React
 gem 'react-rails'

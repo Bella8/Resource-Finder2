@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'site#index'
+  stormpath_rails_routes
   resources :resources
 
   namespace :api do
