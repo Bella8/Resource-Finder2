@@ -1,9 +1,22 @@
-<p id="notice"><%= notice %></p>
+<% if !signed_in? %>
+<div class="row">
+  <div class="small-6  large-8 small-centered text-center columns">
+    <button type="button" class="button login-button">
 
-<!-- <%# @items.each do |item| %>
-<ul>
-  <li><%# item.caseid %></li>
-</ul>
-<%# end %> -->
-
-<%= react_component 'Main'  %>
+      <%= link_to "Sign in with Google", new_login_path %></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-10 medium-7 large-4 small-centered text-center columns">
+      <small class="use-and-conditions">By sigining up, you agree to Resouces Finder's Terms and Conditions of Use and      Privacy Policy. </small>
+    </div>
+  </div>
+<% end %>
+<% if signed_in? %>
+<div class="row">
+  <div class="small-6  large-8 small-centered text-center columns">
+    <button type="button" class="button login-button">
+      <%= link_to "Add Client", form_path %></button>
+    </div>
+  </div>
+<% end %>
