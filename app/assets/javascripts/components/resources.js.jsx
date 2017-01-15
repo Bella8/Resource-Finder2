@@ -19,7 +19,6 @@ var Resources = React.createClass({
     });
     return(
     <div>
-      <Header/>
       <div className="row small-up-1 medium-up-4 large-up-5">{questions}</div>
 </div>
   )

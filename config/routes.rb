@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   stormpath_rails_routes
   resources :resources
 
+  get '/form' => 'site#form'
+
   namespace :api do
       namespace :v1 do
         resources :items, only: [:index, :create, :destroy, :update]

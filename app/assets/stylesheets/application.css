@@ -45,3 +45,26 @@ body {
   margin: 8px 20px;
   /*height: 80vh;*/
 }
+
+.login-button {
+  border: 2px solid white;
+  background-color: #46ead9;
+  padding:2vh 15vw;
+  margin-top:40vh;
+  border-radius: 25px;
+}
+.login-button:hover {
+background-color: #46ead9;
+}
+.use-and-conditions {
+  color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+  color: white;
+  background-color: color: #88e1d8;
+}

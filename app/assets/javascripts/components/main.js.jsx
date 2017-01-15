@@ -120,7 +120,7 @@ var Main = React.createClass({
   render: function() {
     return(
       <div className="row">
-        <Header/>
+
         <div className="small-12 small-centered medium-9 medium-centered columns ">
           <h5 className="text-center" >Please answer all the questions</h5>
           <form onSubmit={this.handleFormSubmit}>
