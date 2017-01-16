@@ -19,6 +19,15 @@ class SiteController < ApplicationController
     else
       render :index
     end
+
+    def item
+        caseid = params[:id]
+        @item = Item.caseid
+
+        # if (@item.empty?)
+        #   flash[:notice] = "Sorry, can't find a item with that caseid."
+        #   redirect_to root_path
+    end
   end
 
   def edit
