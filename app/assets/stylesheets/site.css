@@ -1,3 +1,11 @@
-body{
+/*body{
   background-color: white;
+}*/
+
+.login-main a {
+  color: black;text-decoration: underline;
+}
+
+.login-main a:hover{
+  color: black;
 }

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :resources
 
   get '/form' => 'site#form'
-
+  get '/allitems' =>'site#allitems' 
   namespace :api do
       namespace :v1 do
         resources :items, only: [:index, :create, :destroy, :update]

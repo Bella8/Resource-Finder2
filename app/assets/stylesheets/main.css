@@ -1,0 +1,18 @@
+.from-title{
+  color: white;
+}
+
+.button.success {
+  background-color: #5764c6;
+  color: white;
+  border-radius: 5px;
+}
+
+.button.success:hover {
+  background-color: #5764c6;
+  color: white;
+}
+
+.clear-form {
+  color: #5764c6;
+}

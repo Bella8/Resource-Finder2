@@ -104,6 +104,11 @@ var Main = React.createClass({
     this.setState({ questions: questions });
   },
 
+  buildLinkHref: function() {
+    //  return '/search/'+this.state.query+'/some-action';
+    return '/resources'
+    //  this.state.query;
+  },
   // onQuestionFormSubmit: function() {
   //   // Object.values  array of a given object's own enumerable property values
   //   // let questions = Object.values(this.state.questions);
@@ -117,33 +122,33 @@ var Main = React.createClass({
   //   // // console.log(data);
   // },
 
+//value="submit"
   render: function() {
     return(
       <div className="row">
 
         <div className="small-12 small-centered medium-9 medium-centered columns ">
-          <h5 className="text-center" >Please answer all the questions</h5>
-          <form onSubmit={this.handleFormSubmit}>
+          <h5 className="text-center from-title" >Please answer all the questions</h5>
+          <form onSubmit={this.handleFormSubmit} >
 
             <div className="row column main-form">
 
               <QuestionForm questions={Object.values(this.state.questions)}
                 onChange={this.onQuestionFormChange} ref="questions"/>
 
-              <input ref="answer"
+              <p><a href={this.buildLinkHref()} ref="answer"
                 type="submit"
-                className="btn btn-primary float-right"
+                className="medium success button float-right main-button"
                 onClick={this.onQuestionFormSubmit}
-                value="Submit"/>
+                value={this.state.query}>Submit</a></p>
 
               <button
-                className="btn btn-link float-left"
+                className="btn btn-link float-left clear-form"
                 onClick={this.handleClearForm}>Clear form
               </button>
             </div>
           </form>
         </div>
-        <Body />
       </div>
     )
   }

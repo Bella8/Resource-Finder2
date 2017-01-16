@@ -20,6 +20,9 @@
   border: 1px solid #cacaca;
   padding: 1rem;
   border-radius: 3px; }*/
+.top-bar {
+    background-color: #40e0d0;
+}
   form {
       border: 3px solid #ccc;
       padding: 0 20px 25px 20px;
@@ -30,10 +33,11 @@
 .header{
   color: white;
 }
-body {
+/*body {
   background-color: #40e0d0;
-}
-#form-header{
+}*/
+
+#form-header {
   color: white;
 }
 
@@ -57,13 +61,15 @@ body {
 background-color: #46ead9;
 }
 .use-and-conditions {
-  color: white;
+  color: black;
 }
 
 a {
     color: white;
 }
-
+li {
+  list-style: none;
+}
 a:hover {
   color: white;
   background-color: color: #88e1d8;

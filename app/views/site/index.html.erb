@@ -1,14 +1,20 @@
+<div class="main-body">
 <% if !signed_in? %>
 <div class="row">
-  <div class="small-6  large-8 small-centered text-center columns">
+  <div class="small-6  large-8 small-centered text-center columns ">
     <button type="button" class="button login-button">
-
-      <%= link_to "Sign in with Google", new_login_path %></button>
+      <%= link_to "Sign up with Google", new_register_path %></button>
     </div>
   </div>
   <div class="row">
-    <div class="small-10 medium-7 large-4 small-centered text-center columns">
-      <small class="use-and-conditions">By sigining up, you agree to Resouces Finder's Terms and Conditions of Use and      Privacy Policy. </small>
+    <div class="small-10 medium-5 large-4 small-centered text-center columns">
+      <small class="use-and-conditions">By sigining in, you agree to Resouces Finder's Terms and Conditions of Use and      Privacy Policy. </small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-8 medium-4 large-3 small-centered text-center columns">
+      <hr>
+      <small class="use-and-conditions login-main" >Already have an account? <%= link_to "Log in", new_login_path %> here.</small>
     </div>
   </div>
 <% end %>
@@ -20,3 +26,4 @@
     </div>
   </div>
 <% end %>
+</div>
