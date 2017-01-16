@@ -72,12 +72,12 @@ var Main = React.createClass({
 
     console.log("this is submitted info", this.state);
 
-    $.ajax({
-      url: "/api/v1/items.json",
-      type: 'POST',
-      // data: {item:{"housing": "Homeless"}}
-      data: {item: data}
-    });
+    // $.ajax({
+    //   url: "/api/v1/items.json",
+    //   type: 'POST',
+    //   // data: {item:{"housing": "Homeless"}}
+    //   data: {item: data}
+    // });
 
   },
   // TODO:  implement cler form.
@@ -111,7 +111,7 @@ var Main = React.createClass({
     //  this.state.query;
   },
 
-  //TODO to look at if this function is necessary  
+  //TODO to look at if this function is necessary
   // onQuestionFormSubmit: function() {
   //   // Object.values  array of a given object's own enumerable property values
   //   // let questions = Object.values(this.state.questions);
