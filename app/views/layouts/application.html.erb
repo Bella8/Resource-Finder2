@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- <li class="name"> -->
+      <h5 class="float-left"><%= link_to "RESOURCE FINDER", root_path %></h5>
 
-<%= yield %>
+        <% if signed_in? %>
+        <!-- <h5> Welcome, <%# current_account.full_name %> </h5> -->
+        <li/ class="float-right"> <%= link_to "Logout", logout_path, method: :post %></li/>
+        <% end %>
+      <!-- </li> -->
+    </ul>
+  </nav>
+
+  <%= yield %>
 
 </body>
 </html>
