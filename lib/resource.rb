@@ -1,7 +1,10 @@
 class Resource
 
   attr_accessor :agency, :division, :program_model, :site_name, :phone_number, :address, :city, :state, :zip
-
+  # geocoded_by :zip
+  # after_validation :geocode, :if => :zip_changed?
+  # @zip.latitude 
+  # @zip.longitude
   def initialize(resource_info)
     self.agency = resource_info[:agency]
     self.division = resource_info[:division]

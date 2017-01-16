@@ -13,7 +13,7 @@ var TextForm = React.createClass({
   },
   //capture the updated stated or typed value
   getValue: function() {
-       return this.refs.textinput.value;
+    return this.refs.textinput.value;
   },
 
   render: function() {
@@ -28,11 +28,10 @@ var TextForm = React.createClass({
           <div className="small-4 medium-2 columns">
             <div className="form-group">
               <label htmlFor='name'>
-              
+
                 <p>{this.props.question}</p>
 
                 <input ref="textinput" id='name' name='name' type='text' onChange={this.updateState}  />
-
               </label>
             </div>
           </div>

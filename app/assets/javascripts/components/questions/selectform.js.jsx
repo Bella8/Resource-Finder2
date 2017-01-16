@@ -6,8 +6,8 @@ var SelectForm = React.createClass({
     answers: React.PropTypes.arrayOf(React.PropTypes.string),
     value: React.PropTypes.string
   },
-   //returing the value that is selected via value.
-   //could also be done via refs, but not best practice.
+  //returing the value that is selected via value.
+  //could also be done via refs, but not best practice.
   getValue: function() {
     return this.state.value
   },
@@ -26,7 +26,7 @@ var SelectForm = React.createClass({
     // console.log(thisName);
     var change = this.handleChange;
 
-//looping through the answers
+    //looping through the answers
     var answerElements = this.props.answers.map(function(answer, i){
       return(
         <div key={i} className="row">
@@ -49,7 +49,7 @@ var SelectForm = React.createClass({
             <fieldset className="RadioSet">
 
               <legend>{props.question}</legend>
-              
+
               <ul>{answerElements}</ul>
 
             </fieldset>

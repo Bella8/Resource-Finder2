@@ -72,12 +72,12 @@ var Main = React.createClass({
 
     console.log("this is submitted info", this.state);
 
-    // $.ajax({
-    //   url: "/api/v1/items.json",
-    //   type: 'POST',
-    //   // data: {item:{"housing": "Homeless"}}
-    //   data: {item: data}
-    // });
+    $.ajax({
+      url: "/api/v1/items.json",
+      type: 'POST',
+      // data: {item:{"housing": "Homeless"}}
+      data: {item: data}
+    });
 
   },
   // TODO:  implement cler form.
@@ -105,10 +105,13 @@ var Main = React.createClass({
   },
 
   buildLinkHref: function() {
-    //  return '/search/'+this.state.query+'/some-action';
+    //TODO obtain the quries here to pass
+    '/search/'+this.state.query+'/some-action';
     return '/resources'
     //  this.state.query;
   },
+
+  //TODO to look at if this function is necessary  
   // onQuestionFormSubmit: function() {
   //   // Object.values  array of a given object's own enumerable property values
   //   // let questions = Object.values(this.state.questions);
@@ -122,7 +125,7 @@ var Main = React.createClass({
   //   // // console.log(data);
   // },
 
-//value="submit"
+
   render: function() {
     return(
       <div className="row">

@@ -44,6 +44,5 @@ var CheckboxInputField = React.createClass({
     handleFieldChange: function(elementIndex, elementChecked) {
         // A little more pre-processing, then pass the data upwards again
          this.props.handleFieldChange(this.props.index, elementIndex, elementChecked);
-
     }
 });

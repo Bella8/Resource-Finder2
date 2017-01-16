@@ -1,32 +1,13 @@
 var QuestionForm = React.createClass({
 
   getValues: function() {
-    // console.log(this.name);
-    // return
+
     let values = []
 
     for (var question in this.refs){
-      // console.log(question, this.refs[question].getValue());
-
       values.push( question.getValue());
     }
-    //   //declare array of values
-    //   //loop over ref.  where getvalue !==undefined push to array and return array
-    //   let values = []
-    //   this.refs.
-    // console.log(q.getValue());
-    //
     return values
-
-    //   //declare array of values
-    //   //loop over ref.  where getvalue !==undefined push to array and return array
-    //   let values = []
-    //   this.refs.
-    // console.log(q.getValue());
-    //
-    // return 1;
-      // q.getValues();
-    // })
   },
 
   render: function() {
@@ -41,7 +22,7 @@ var QuestionForm = React.createClass({
         return (<TextForm key={i} onChange={onChange} value={this.value} name={e.name} header={e.header} />)
       }
     })
-  //  this.props.forms = questions
+    //  this.props.forms = questions
     return (<div>
       {questions}
     </div>)

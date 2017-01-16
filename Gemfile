@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'geocoder'
 gem 'stormpath-rails', '~> 2.5.0'
 
 gem 'responders'
