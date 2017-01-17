@@ -23,11 +23,11 @@ var AllItems = React.createClass({
           <p><b>Case ID:</b> {item.caseid}</p>
           <p><b>Zip code:</b> {item.zip}</p>
           <p><b>Housing type:</b> {item.housing}</p>
-          <p><b>Victim of domestic violence:</b> {item.dv}</p>
+          <p><b>Victim of domestic violence:</b> {String(item.dv)}</p>
           <p><b>Employment status:</b> {item.employment}</p><b>Have health insurance:</b>
-          <p>{item.insurance}</p>
-          <p><b>Receive SNAP benefits:</b> {item.snap}</p>
-          <p><b>Have Child (or children): </b> {item.child}</p>
+          <p>{String(item.insurance)}</p>
+          <p><b>Receive SNAP benefits:</b> {String(item.snap)}</p>
+          <p><b>Have Child (or children):</b> {String(item.child)}</p>
             <button onClick={this.handleEdit()}> Edit </button>
           <br/>
           <br/>
@@ -38,6 +38,5 @@ var AllItems = React.createClass({
           {items}
         </div>
       )
-
     }
   });
