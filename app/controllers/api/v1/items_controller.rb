@@ -6,7 +6,8 @@ class Api::V1::ItemsController < Api::V1::BaseController
   def create
     respond_with :api, :v1,
     Item.create(item_params)
-    redirect_to resources_path
+    # respond_with Item.last
+    # redirect_to resources_path
   end
 
   def destroy

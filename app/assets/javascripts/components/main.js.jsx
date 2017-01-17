@@ -76,7 +76,9 @@ var Main = React.createClass({
       url: "/api/v1/items.json",
       type: 'POST',
       // data: {item:{"housing": "Homeless"}}
-      data: {item: data}
+      data: {item: data},
+      success: (item) => {
+                console.log(item);}
     });
 
   },
