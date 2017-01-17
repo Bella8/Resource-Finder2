@@ -72,12 +72,12 @@ var Main = React.createClass({
 
     console.log("this is submitted info", this.state);
 
-    // $.ajax({
-    //   url: "/api/v1/items.json",
-    //   type: 'POST',
-    //   // data: {item:{"housing": "Homeless"}}
-    //   data: {item: data}
-    // });
+    $.ajax({
+      url: "/api/v1/items.json",
+      type: 'POST',
+      // data: {item:{"housing": "Homeless"}}
+      data: {item: data}
+    });
 
   },
   // TODO:  implement cler form.
@@ -104,14 +104,6 @@ var Main = React.createClass({
     this.setState({ questions: questions });
   },
 
-  buildLinkHref: function() {
-    //TODO obtain the quries here to pass
-    '/search/'+this.state.query+'/some-action';
-    return '/resources'
-    //  this.state.query;
-  },
-
-  //TODO to look at if this function is necessary
   // onQuestionFormSubmit: function() {
   //   // Object.values  array of a given object's own enumerable property values
   //   // let questions = Object.values(this.state.questions);
@@ -125,33 +117,33 @@ var Main = React.createClass({
   //   // // console.log(data);
   // },
 
-
   render: function() {
     return(
       <div className="row">
 
         <div className="small-12 small-centered medium-9 medium-centered columns ">
-          <h5 className="text-center from-title" >Please answer all the questions</h5>
-          <form onSubmit={this.handleFormSubmit} >
+          <h5 className="text-center" id="form-header" >Please answer all the questions</h5>
+          <form onSubmit={this.handleFormSubmit}>
 
             <div className="row column main-form">
 
               <QuestionForm questions={Object.values(this.state.questions)}
                 onChange={this.onQuestionFormChange} ref="questions"/>
 
-              <p><a href={this.buildLinkHref()} ref="answer"
+              <input ref="answer"
                 type="submit"
-                className="medium success button float-right main-button"
+                className="btn btn-primary float-right"
                 onClick={this.onQuestionFormSubmit}
-                value={this.state.query}>Submit</a></p>
+                value="Submit"/>
 
               <button
-                className="btn btn-link float-left clear-form"
+                className="btn btn-link float-left"
                 onClick={this.handleClearForm}>Clear form
               </button>
             </div>
           </form>
         </div>
+
       </div>
     )
   }
