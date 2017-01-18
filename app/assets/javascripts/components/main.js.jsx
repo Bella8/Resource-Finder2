@@ -3,11 +3,9 @@ var Main = React.createClass({
   getInitialState: function() {
     return { resources: undefined};
   },
-  // let resources = undefined;
+
   setResources: function(resources){
-    // console.log(item);
     this.setState({ resources: resources });
-    // this.state.
   },
 
   render: function() {
@@ -21,8 +19,6 @@ var Main = React.createClass({
         <Form onSubmit={this.setResources}/>
       )
     };
-
   }
-
 });
-//having a clear form to go back to the form.  
+//having a clear form to go back to the form.

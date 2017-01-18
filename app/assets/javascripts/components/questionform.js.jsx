@@ -1,9 +1,7 @@
 var QuestionForm = React.createClass({
 
   getValues: function() {
-
     let values = []
-
     for (var question in this.refs){
       values.push( question.getValue());
     }
@@ -22,7 +20,6 @@ var QuestionForm = React.createClass({
         return (<TextForm key={i} onChange={onChange} value={this.value} name={e.name} header={e.header} />)
       }
     })
-    //  this.props.forms = questions
     return (<div>
       {questions}
     </div>)
