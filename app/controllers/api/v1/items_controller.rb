@@ -17,6 +17,7 @@ class Api::V1::ItemsController < Api::V1::BaseController
     # end
     Item.create(item_params)
     # respond_with :api, :v1, housing_value
+    # rendering the housing information 
     render json: housing_value
     # render json: dv_value
     # redirect_to resources_search_path

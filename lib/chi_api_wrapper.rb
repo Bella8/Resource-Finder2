@@ -5,8 +5,12 @@ class ChiApiWrapper
   APP_TOKEN = ENV["APP_TOKEN"]
   SECRET_TOKEN = ENV["SECRET_TOKEN"]
 
-  def self.list_of_services
-    url = BASE_URL + "division=" + "Domestic Violence" +"&$where=within_circle" + "(location," + "41.9703"+"," + "-87.6630" + "," + "6437.38" + ")" + "&$limit=4"
+  def self.list_of_services(search, zip)
+    zip_code= Geocoder.search(zip)
+    lat = zip_code.first.data['geometry']['location']['lat']
+    lng = zip_code.first.data['geometry']['location']['lng']
+    # url = BASE_URL + "division=" + "#{search}" +"&$where=within_circle" + "(location," + "41.9703"+"," + "-87.6630" + "," + "6437.38" + ")" + "&$limit=4"
+      url = BASE_URL + "division=" + "#{search}" +"&$where=within_circle" + "(location," + "#{lat}"+"," + "#{lng}" + "," + "6437.38" + ")" + "&$limit=4"
 
 
     data = HTTParty.get(url, headers: {"APP_TOKEN" => "APP_TOKEN"})

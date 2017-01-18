@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   root to: 'site#index'
   stormpath_rails_routes
-  resources :resources
+
+  # get 'items/resources' => 'items#resources', as: 'resources'
+   get '/resources' => 'resources#index', as: 'resources'
+   get '/resources/new' => 'resources#new', as: 'resources_new'
+    # resources :resources
 
   get '/form' => 'site#form'
   get '/allitems' =>'site#allitems'
   get '/allitems/:caseid' =>'site#item'
   namespace :api do
-      namespace :v1 do
-        resources :items, only: [:index, :create, :destroy, :update]
-      end
+    namespace :v1 do
+      resources :items, only: [:index, :create, :destroy, :update]
     end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -3,7 +3,7 @@ class Resource
   attr_accessor :agency, :division, :program_model, :site_name, :phone_number, :address, :city, :state, :zip
   # geocoded_by :zip
   # after_validation :geocode, :if => :zip_changed?
-  # @zip.latitude 
+  # @zip.latitude
   # @zip.longitude
   def initialize(resource_info)
     self.agency = resource_info[:agency]
@@ -17,8 +17,8 @@ class Resource
     self.zip = resource_info[:zip] ||= nil
   end
 
-  def self.list_of_services
-    @resources_data = ChiApiWrapper.list_of_services
+  def self.list_of_services(search, zip)
+    @resources_data = ChiApiWrapper.list_of_services(search, zip)
     return @resources_data
   end
 end
