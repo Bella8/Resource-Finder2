@@ -74,10 +74,13 @@ var Main = React.createClass({
 
     $.ajax({
       url: "/api/v1/items.json",
+      // url: "/resources"
       type: 'POST',
       // data: {item:{"housing": "Homeless"}}
       data: {item: data},
       success: (item) => {
+        // search_term = data['housing']
+        // window.location = '/resources/' + search_term
                 console.log(item);}
     });
 

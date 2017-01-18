@@ -4,11 +4,28 @@ class Api::V1::ItemsController < Api::V1::BaseController
   end
 
   def create
-    respond_with :api, :v1,
+    values = {"housing" => "Homeless Services", "dv" => "Domestic Violence", "employment" => "Workforce Services", "insurance" => "No", "snap" => "No", "child" => "No" }
+    # empty hash?
+    if item_params['housing'] == "Homeless"
+      search = "Homeless Services"
+      zip = item_params['zip']
+      housing_value = Resource.list_of_services(search, zip)
+    end
+    # if item_params['dv'] == "Yes"
+    #   search = "Domestic Violence"
+    #   dv_value = Resource.list_of_services(search)
+    # end
     Item.create(item_params)
-    # respond_with Item.last
-    # redirect_to resources_path
+    # respond_with :api, :v1, housing_value
+    render json: housing_value
+    # render json: dv_value
+    # redirect_to resources_search_path
+    # if get info from server on javascipt then redirect.
   end
+
+  # def resources
+  #   housing_value = Resource.list_of_services(search)
+  # end
 
   def destroy
     respond_with Item.destroy(params[:id])
