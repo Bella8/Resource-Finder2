@@ -1,2 +1,6 @@
- <!-- <AllItems /> -->
+
+<% if signed_in? %>
 <%= react_component 'AllItems' %>
+<% else %>
+<h5> Please sign in access this link!</h5>
+<% end %>
