@@ -13,6 +13,8 @@ var Resources = React.createClass({
           <li>{e.program_model }</li>
           <li>{e.site_name }</li>
           <li>{e.phone_number }</li>
+          <li>{e.address}</li>
+          <li>{e.city}, {e.state} {e.zip}</li>
         </ul>
       </div>
     )

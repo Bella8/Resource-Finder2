@@ -63,7 +63,7 @@ var Form = React.createClass({
     formSubmitEvent.preventDefault();
 
     let questions = Object.values(this.state.questions);
-    console.log(questions);
+    // console.log(questions);
 
     let data = {};
     this.answers = questions.map(function(question) {
@@ -74,17 +74,12 @@ var Form = React.createClass({
     let onSubmit = this.props.onSubmit
     $.ajax({
       url: "/api/v1/items.json",
-      // url: "/resources"
-      // type: 'Get'
       type: 'POST',
-      // data: {item:{"housing": "Homeless"}}
       data: {item: data},
       success: (item) => {
-        // search_term = data['housing']
-        // window.location = '/resources/' + search_term
-                // console.log(item);
-              onSubmit(item)
-            }
+        // console.log(item);
+        onSubmit(item)
+      }
     });
 
   },
@@ -111,19 +106,6 @@ var Form = React.createClass({
     questions[question].answer = answer;
     this.setState({ questions: questions });
   },
-
-  // onQuestionFormSubmit: function() {
-  //   // Object.values  array of a given object's own enumerable property values
-  //   // let questions = Object.values(this.state.questions);
-  //   // console.log(questions);
-  //   //
-  //   // let data = {};
-  //   // this.answers = questions.map(function(question) {
-  //   //   data[question.key] = question.answer
-  //   // })
-  //   // return data;
-  //   // // console.log(data);
-  // },
 
   render: function() {
     return(
