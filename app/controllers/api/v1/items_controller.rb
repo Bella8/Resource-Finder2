@@ -53,7 +53,6 @@ class Api::V1::ItemsController < Api::V1::BaseController
   end
 
   private
-
   def item_params
     params.require(:item).permit(:date, :caseid, :zip, :housing, :dv, :employment, :insurance, :snap, :child)
   end

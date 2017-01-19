@@ -1,2 +1,5 @@
-
+<% if signed_in? %>
 <%= react_component 'Main'  %>
+<% else %>
+<h5> Please sign in access this link!</h5>
+<% end %>
