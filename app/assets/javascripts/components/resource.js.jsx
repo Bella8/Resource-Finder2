@@ -4,6 +4,7 @@ var Resources = React.createClass({
   },
   render: function() {
     var questions = this.state.data.map(function(e, i) {
+
       return(
         <div key={i} className="column agencies">
           < CheckboxInput />
@@ -21,7 +22,7 @@ var Resources = React.createClass({
   });
   return(
     <div>
-      <div className="row small-up-1 medium-up-4 large-up-5">{questions}</div>
+      <div className="row small-up-1 medium-up-2 large-up-2">{questions}</div>
     </div>
   )
 }
