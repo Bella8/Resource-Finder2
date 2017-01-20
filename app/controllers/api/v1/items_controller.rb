@@ -36,12 +36,15 @@ class Api::V1::ItemsController < Api::V1::BaseController
     end
 
     Item.create(item_params)
-    # respond_with :api, :v1, housing_value
-    # rendering the housing information
-    # render json: {api_resources, url_resources}
-
     render json: {api_resources: api_resources, url_resources: url_resources}
+  end
 
+  def search
+    if term.downcase == "housing" || "homeless services" ||
+      search = "Homeless Services"
+      zip = zip
+      housing_value = Resource.list_of_services(search, zip)
+    end
   end
 
   def update

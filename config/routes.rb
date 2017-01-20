@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   stormpath_rails_routes
 
   # get 'items/resources' => 'items#resources', as: 'resources'
-   get '/resources' => 'resources#index', as: 'resources'
-   get '/resources/new' => 'resources#new', as: 'resources_new'
+  #  get '/resources' => 'resources#index', as: 'resources'
+  #  get '/resources/new' => 'resources#new', as: 'resources_new'
     # resources :resources
-
+  # get '/:search' => 'site#search'
   get '/form' => 'site#form'
   get '/allitems' =>'site#allitems'
   get '/allitems/:caseid' =>'site#item'
