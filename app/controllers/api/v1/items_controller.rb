@@ -40,7 +40,7 @@ class Api::V1::ItemsController < Api::V1::BaseController
   end
 
   def search
-    if term.downcase == "housing" || "homeless services" ||
+    if term.downcase == "housing" || term.downcase == "homeless services"
       search = "Homeless Services"
       zip = zip
       housing_value = Resource.list_of_services(search, zip)
