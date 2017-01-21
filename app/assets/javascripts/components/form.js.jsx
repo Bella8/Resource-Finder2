@@ -1,7 +1,7 @@
 var questionData = [
   {
     name:"clientcase",
-    header:"Client Client ID",
+    header:"Client ID",
     type:"text",
     placeholder: "Case ID",
     key: "caseid"
