@@ -97,3 +97,7 @@ a:hover {
 .list-link:hover {
   color: blue;
 }
+
+.row {
+  max-width: 1280px; 
+  }
