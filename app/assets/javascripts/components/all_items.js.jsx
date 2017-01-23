@@ -7,14 +7,19 @@ var AllItems = React.createClass({
     console.log('Component mounted');
     $.getJSON('/api/v1/items.json', (response) => { this.setState({ items: response }) });
   },
+  handleDelete() {
+    console.log('delete item clicked');
+  },
+
   handleEdit() {
+    // console.log('edit item clicked');
   },
 
   render() {
     var items= this.state.items.map((item) => {
       return (
         <div key={item.id}>
-          <Item item={item}
+          <Item item={item} handleDelete={this.handleDelete.bind(this, item.id)}
             handleEdit={this.handleEdit}/>
           <p><b>Case ID:</b> {item.caseid}</p>
           <p><b>Zip code:</b> {item.zip}</p>
@@ -25,9 +30,11 @@ var AllItems = React.createClass({
           <p><b>Receive SNAP benefits:</b> {String(item.snap)}</p>
           <p><b>Have Child (or children):</b> {String(item.child)}</p>
           <button onClick={this.handleEdit()}> Edit </button>
+          <button onClick={this.handleDelete.bind(this, item.caseid)}>Delete</button>
           <br/>
           <br/>
-        </div> )
+        </div>
+      )
       });
       return(
         <div>

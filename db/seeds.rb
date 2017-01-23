@@ -9,24 +9,24 @@
 Item.create!([
   {
   date: DateTime.new(2017,1,9,8),
-  caseid:1234,
+  caseid:12345,
   zip: 60640,
   housing: "Homeless/Live in a shelter",
   dv: true,
   employment: "Underemployed",
   insurance: true,
-  snap: false,
+  snap: true,
   child: true
 },
 {
 date: DateTime.new(2017,2,9,8),
-caseid:1334,
-zip: 60640,
+caseid:87878,
+zip: 60626,
 housing: "Homeless/Live in a shelter",
 dv: true,
 employment: "Underemployed",
 insurance: true,
-snap: false,
+snap: true,
 child: true
 },
   ])

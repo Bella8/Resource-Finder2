@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # get '/:search' => 'site#search'
   get '/form' => 'site#form'
   get '/allitems' =>'site#allitems'
+  get '/:id' =>'site#search', as: "search"
+  # get '/:id' =>'site#search', as: "search"
+
+
   get '/allitems/:caseid' =>'site#item'
   namespace :api do
     namespace :v1 do

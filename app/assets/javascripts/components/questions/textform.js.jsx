@@ -16,6 +16,7 @@ var TextForm = React.createClass({
     return this.refs.textinput.value;
   },
 
+
   render: function() {
     return(
       <div>
@@ -31,7 +32,7 @@ var TextForm = React.createClass({
 
                 <p>{this.props.question}</p>
 
-                <input ref="textinput" id='name' name='name' type='text' onChange={this.updateState}  />
+                <input ref="textinput" id='name' name='name' type='text' maxLength="5" autoFocus="true" onChange={this.updateState} required="true" />
               </label>
             </div>
           </div>

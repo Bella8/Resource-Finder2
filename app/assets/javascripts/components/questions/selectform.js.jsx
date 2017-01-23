@@ -32,7 +32,7 @@ var SelectForm = React.createClass({
         <div key={i} className="row">
           <div className="small-12 medium-12 columns">
 
-            <li><input onClick={change} type="radio" name={props.name} value={answer} ref="radioselect" id={i} /><label>{answer}</label></li>
+            <li><input onClick={change} type="radio" name={props.name} value={answer} ref="radioselect" id={i} autoFocus="true" required="true"/><label>{answer}</label></li>
           </div>
         </div>
       )

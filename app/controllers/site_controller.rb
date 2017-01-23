@@ -1,6 +1,8 @@
 class SiteController < ApplicationController
+    skip_before_action :require_authentication!, :except => :root
   def index
-    @items = Item.all
+    # @items = Item.all
+    @items = Item.where("caseid =?", params[:caseid])
   end
 
   def mainpage
@@ -12,24 +14,10 @@ class SiteController < ApplicationController
   def allitems
   end
 
+
   def search
-    @client_info = Item.search(params[:query])
-    if request.xhr?
-      render :json => @client_info.to_json
-    else
-      render :index
-    end
-
-    def item
-        caseid = params[:id]
-        @item = Item.caseid
-
-        # if (@item.empty?)
-        #   flash[:notice] = "Sorry, can't find a item with that caseid."
-        #   redirect_to root_path
-    end
+      @item = Item.find(params[:id])
   end
-
   def edit
   end
 

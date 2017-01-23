@@ -1,4 +1,5 @@
 class Api::V1::ItemsController < Api::V1::BaseController
+  before_action :require_authentication!
   def index
     respond_with Item.all
   end
@@ -39,7 +40,7 @@ class Api::V1::ItemsController < Api::V1::BaseController
     render json: {api_resources: api_resources, url_resources: url_resources}
   end
 
-  def search
+  def search_term
     if term.downcase == "housing" || term.downcase == "homeless services"
       search = "Homeless Services"
       zip = zip

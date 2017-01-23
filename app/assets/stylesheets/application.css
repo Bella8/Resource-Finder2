@@ -56,12 +56,30 @@ body {
   border: 2px solid white;
   background-color: #46ead9;
   padding:2vh 15vw;
-  margin-top:40vh;
+  /*margin-top:40vh;*/
   border-radius: 25px;
 }
 
 .login-button:hover {
 background-color: #46ead9;
+}
+
+
+.seach-text {
+  /*border: 2px solid white;
+  background-color: #46ead9;*/
+  margin-top:38vh;
+  border-radius: 25px;
+}
+
+.search-from{
+  margin-bottom: 5vh;
+  padding: 0px;
+  border-radius: 25px;
+}
+.search-tag{
+  margin: 0px;
+  border-radius: 25px;
 }
 
 .use-and-conditions {
@@ -99,5 +117,5 @@ a:hover {
 }
 
 .row {
-  max-width: 1280px; 
+  max-width: 1280px;
   }
