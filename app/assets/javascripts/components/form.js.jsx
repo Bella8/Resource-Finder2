@@ -113,7 +113,7 @@ var Form = React.createClass({
 
         <div className="small-12 small-centered medium-9 medium-centered columns ">
           <h5 className="text-center" id="form-header" >Please answer all the questions</h5>
-          <form onSubmit={this.handleFormSubmit}>
+          <form onSubmit={this.handleFormSubmit} className="questionnaire-form">
 
             <div className="row column main-form">
 

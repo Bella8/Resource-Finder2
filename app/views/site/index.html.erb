@@ -1,44 +1,51 @@
 <div class="main-body">
   <% if !signed_in? %>
-  <div class="row">
+  
     <div class="small-6  large-8 small-centered text-center columns ">
       <button type="button" class="button login-button">
-        <%= link_to "Sign up with Google", new_register_path %></button>
-      </div>
+        <%= link_to "Sign up with Google", new_register_path %>
+      </button>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="small-10 medium-5 large-4 small-centered text-center columns">
-        <small class="use-and-conditions">By sigining in, you agree to Resouces Finder's Terms and Conditions of Use and      Privacy Policy. </small>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-8 medium-4 large-3 small-centered text-center columns">
-        <hr>
-        <small class="use-and-conditions login-main" >Already have an account? <%= link_to "Log in", new_login_path %> here.</small>
-      </div>
-    </div>
-    <% end %>
   <div class="row">
-      <div class="small-6 medium-4 large-4 small-centered text-center columns seach-text">
-    <% if signed_in? %>
-    <%= form_tag root_path, :method => 'get', class: "search-from" do %>
-    <%= text_field_tag :caseid, params[:caseid], class: "search-tag" %>
-    <% end %>
-</div>
-      <div class="small-6  large-8 small-centered text-center columns">
+    <div class="small-10 medium-5 large-4 small-centered text-center columns">
+      <small class="use-and-conditions">By sigining in, you agree to Resouces Finder's Terms and Conditions of Use and      Privacy Policy. </small>
+    </div>
+  </div>
 
-        <button type="button" class="button login-button">
-          <%= link_to "Add Client", form_path %></button>
-        </div>
-      </div>
+  <div class="row">
+    <div class="small-8 medium-4 large-3 small-centered text-center columns">
+      <hr>
+      <small class="use-and-conditions login-main" >Already have an account? <%= link_to "Log in", new_login_path %> here.</small>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-6 medium-4 large-4 small-centered text-center columns seach-text">
+      <% if signed_in? %>
+      <%= form_tag root_path, :method => 'get', class: "search-from" do %>
+      <%= text_field_tag :caseid, params[:caseid], class: "search-tag", placeholder: 'SEARCH FOR A CLIENT BY CASE ID' %>
+      <%# submit_tag "Search" %>
       <% end %>
     </div>
 
-
-    <%if @items[0] != nil %>
-    <div>
-      <p><b>Case ID:</b> <%= link_to @items[0].caseid, search_path(@items[0].id) %></p>
+    <div class="small-6  large-8 small-centered text-center columns">
+      <%if @items[0] == nil %>
+      <button type="button" class="button add-client-button">
+        <%= link_to "Add Client", form_path %>
+      </button>
+      <% end %>
     </div>
-    <%end %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="small-6 medium-4 large-4 small-centered text-center columns ">
+      <%if @items[0] != nil %>
+      <p><b>Case ID:</b> <%= link_to @items[0].caseid, search_path(@items[0].id), class: "caseid-link" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
