@@ -20,7 +20,6 @@ handleEdit() {
         {String(this.props.item.insurance)}</p>
       <p><b>Receive SNAP benefits:</b> {String(this.props.item.snap)}</p>
         <p><b>Have Child (or children):</b>  {String(this.props.item.child)}</p>
-          <button onClick={this.handleDelete} >Delete</button> <button onClick={this.handleEdit}> Edit </button>
       </div>
       </div>
     )

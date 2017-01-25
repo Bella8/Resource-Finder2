@@ -12,13 +12,15 @@
     <ul class="title-area">
       <h5 class="float-left"><%= link_to "RESOURCE FINDER", root_path %></h5>
 
-        <% if signed_in? %>
-        <li/ class="float-right"> <%= link_to "Logout", logout_path, method: :post %></li/>
-        <% end %>
+      <% if signed_in? %>
+      <li/ class="float-right"> <%= link_to "Logout", logout_path, method: :post %></li/>
+      <% end %>
 
     </ul>
   </nav>
-
+  <% if flash.now[:notice] %>
+  <h3><%= flash.now[:notice] %></h3>
+  <% end  %>
   <%= yield %>
 
 </body>

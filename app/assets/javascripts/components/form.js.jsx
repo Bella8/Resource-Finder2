@@ -8,7 +8,7 @@ var questionData = [
   },
   {
     name:"zip",
-    header:"Client zip code",
+    header:"Client zip code *Chicago",
     type:"text",
     placeholder: "Zipcode",
     key:"zip"

@@ -74,8 +74,17 @@ body {
 .add-client-button{
   border: 2px solid white;
   background-color: #46ead9;
-  padding:2vh 15vw;
+  padding:2vh 34%;
   border-radius: 25px;
+  /*margin-top:38vh;*/
+}
+
+.main-search{
+  margin-left: 30%;
+}
+
+.main-add-form{
+  margin-top:32vh;
 }
 
 .login-button:hover {
@@ -86,7 +95,8 @@ background-color: #46ead9;
 .seach-text {
   /*border: 2px solid white;
   background-color: #46ead9;*/
-  margin-top:38vh;
+  padding: .5vh 1vw;
+  /*margin-top:38vh;*/
   border-radius: 25px;
 }
 
@@ -102,6 +112,8 @@ background-color: #46ead9;
 .search-tag{
   margin: 0px;
   border-radius: 25px;
+  padding:2vh;
+  border: 2px solid white;
 }
 
 .use-and-conditions {
@@ -140,4 +152,4 @@ a:hover {
 
 .row {
   max-width: 1280px;
-  }
+}

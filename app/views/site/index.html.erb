@@ -1,6 +1,6 @@
 <div class="main-body">
   <% if !signed_in? %>
-  
+
     <div class="small-6  large-8 small-centered text-center columns ">
       <button type="button" class="button login-button">
         <%= link_to "Sign up with Google", new_register_path %>
@@ -22,27 +22,49 @@
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="small-6 medium-4 large-4 small-centered text-center columns seach-text">
-      <% if signed_in? %>
+  <div class="row main-add-form">
+  <div class="small-12 medium-8 large-7 columns medium-centered large-centered seach-text seach-text ">
+        <% if signed_in? %>
+          <%= form_tag resources_path, :method => 'get', class: "index" do %>
+          <div class="small-8 medium-5 large-5 columns  ">
+          <%= text_field_tag :search, params[:search], class: "search-tag", placeholder: 'SEARCH FOR A RESOURCES' %>
+        </div>
+          <div class="small-4 medium-3 large-4  columns ">
+          <%= text_field_tag :zip, params[:zip], class: "search-tag", placeholder: 'ENTER ZIP CODE' %>
+          </div>
+          <%= submit_tag "Search"%>
+          <% end %>
+        </div>
+        </div>
+
+   <div class="row">
+    <div class="small-12 medium-8 large-7 columns seach-text medium-centered large-centered">
       <%= form_tag root_path, :method => 'get', class: "search-from" do %>
+      <div class="small-12 medium-8 large-9 columns  ">
       <%= text_field_tag :caseid, params[:caseid], class: "search-tag", placeholder: 'SEARCH FOR A CLIENT BY CASE ID' %>
-      <%# submit_tag "Search" %>
+      </div>
+      <%= submit_tag "Search" %>
       <% end %>
+
     </div>
 
-    <div class="small-6  large-8 small-centered text-center columns">
-      <%if @items[0] == nil %>
-      <button type="button" class="button add-client-button">
-        <%= link_to "Add Client", form_path %>
-      </button>
+<div class="row">
+    <div class="small-centered medium-centered large-centered">
+      <div class="small-12 medium-8 large-5 columns small-centered medium-centered  large-centered">
+        <%if @items[0] == nil %>
+        <button type="button" class="button add-client-button">
+          <%= link_to "Add Client", form_path %>
+        </button>
+        <% end %>
+      </div>
+      </div>
       <% end %>
     </div>
-    <% end %>
   </div>
 
+
   <div class="row">
-    <div class="small-6 medium-4 large-4 small-centered text-center columns ">
+    <div class="small-6 medium-4 large-4 medium-centered large-centered columns ">
       <%if @items[0] != nil %>
       <p><b>Case ID:</b> <%= link_to @items[0].caseid, search_path(@items[0].id), class: "caseid-link" %></p>
       <% end %>

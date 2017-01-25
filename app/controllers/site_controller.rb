@@ -3,6 +3,9 @@ class SiteController < ApplicationController
   def index
     # @items = Item.all
     @items = Item.where("caseid =?", params[:caseid])
+    if @items.empty? && params[:caseid].present?
+     flash.now[:notice]= "Can't find client with caseid!"
+   end
   end
 
   def mainpage
