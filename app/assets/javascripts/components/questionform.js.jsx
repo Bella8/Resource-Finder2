@@ -1,5 +1,4 @@
 var QuestionForm = React.createClass({
-
   getValues: function() {
     let values = []
     for (var question in this.refs){

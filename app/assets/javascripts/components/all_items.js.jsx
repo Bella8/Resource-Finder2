@@ -4,17 +4,8 @@ var AllItems = React.createClass({
   },
 
   componentDidMount() {
-    console.log('Component mounted');
     $.getJSON('/api/v1/items.json', (response) => { this.setState({ items: response }) });
   },
-  handleDelete() {
-    console.log('delete item clicked');
-  },
-
-  handleEdit() {
-    // console.log('edit item clicked');
-  },
-
   render() {
     var items= this.state.items.map((item) => {
       return (
@@ -35,11 +26,11 @@ var AllItems = React.createClass({
           <br/>
         </div>
       )
-      });
-      return(
-        <div>
-          {items}
-        </div>
-      )
-    }
-  });
+    });
+    return(
+      <div>
+        {items}
+      </div>
+    )
+  }
+});

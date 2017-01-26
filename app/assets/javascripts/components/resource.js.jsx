@@ -4,7 +4,6 @@ var Resources = React.createClass({
   },
   render: function() {
     var questions = this.state.data.map(function(e, i) {
-
       return(
         <div key={i} className="column agencies">
           < CheckboxInput />

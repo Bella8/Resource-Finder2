@@ -14,16 +14,12 @@ var SelectForm = React.createClass({
   // loging the the slected value when it there is a select event.
   handleChange: function (event) {
     this.props.onChange(this.props.name, event.target.value);
-    //this.setState({value: event.target.value});
-    console.log(event.target.value);
   },
 
   render: function() {
     //declaring this above becuase it won't be recognized unless it is declared above.
     var props = this.props;
     var thisName = this.props.name;
-    // console.log(props);
-    // console.log(thisName);
     var change = this.handleChange;
 
     //looping through the answers
@@ -47,11 +43,8 @@ var SelectForm = React.createClass({
         <div className="row">
           <div className="small-12 medium-8 columns">
             <fieldset className="RadioSet">
-
               <legend>{props.question}</legend>
-
               <ul>{answerElements}</ul>
-
             </fieldset>
           </div>
         </div>

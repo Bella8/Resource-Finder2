@@ -20,5 +20,4 @@ class ResourcesController < ApplicationController
       @data = housing_value = Resource.list_of_services(search, zip)
     end
   end
-
 end

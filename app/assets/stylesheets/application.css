@@ -16,18 +16,17 @@
 
  */
 
- /*.main-form {
-  border: 1px solid #cacaca;
-  padding: 1rem;
-  border-radius: 3px; }*/
+.logo{
+  font-family: 'Open Sans', sans-serif;
+}
+
 .top-bar {
     background-color: #40e0d0;
 }
-/*input[type="submit"]
-{
-  background:url(magnifying.png);
-}*/
 
+ul {
+  font-family: 'Lato', sans-serif;
+}
 .questionnaire-form {
     border: 3px solid #ccc;
     padding: 0 20px 25px 20px;
@@ -52,7 +51,8 @@ body {
 }
 
 #form-header {
-  color: black;
+  color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 .agencies {
@@ -66,37 +66,43 @@ body {
 
 .login-button {
   border: 2px solid white;
-  background-color: #46ead9;
-  padding:2vh 15vw;
-  margin-top:40vh;
+  background-color: #40e0d0;
+  padding:2.75vh 15vw;
+  margin-top:35vh;
   border-radius: 25px;
+  font-family: 'Lato', sans-serif;
 }
 .add-client-button{
   border: 2px solid white;
-  background-color: #46ead9;
-  padding:2vh 34%;
+  background-color: #40e0d0;
+  padding:2.5vh 39%;
   border-radius: 25px;
-  /*margin-top:38vh;*/
+  font-family: 'Lato', sans-serif;
+}
+.add-client-button:hover {
+  background-color: #50e2d4;
+}
+.search {
+  background-color: #40e0d0;
+  color: white;
+  border-radius: 25px;
+  border: 1px solid white;
 }
 
-.main-search{
-  margin-left: 30%;
+.search:hover{
+  background-color: #50e2d4;
 }
 
 .main-add-form{
-  margin-top:32vh;
+  margin-top:30vh;
 }
 
 .login-button:hover {
-background-color: #46ead9;
+background-color: #50e2d4;
 }
 
-
 .seach-text {
-  /*border: 2px solid white;
-  background-color: #46ead9;*/
   padding: .5vh 1vw;
-  /*margin-top:38vh;*/
   border-radius: 25px;
 }
 
@@ -110,14 +116,15 @@ background-color: #46ead9;
   border-radius: 25px;
 }
 .search-tag{
-  margin: 0px;
+  margin-bottom: 25px;
   border-radius: 25px;
-  padding:2vh;
+  padding:3vh;
   border: 2px solid white;
 }
 
 .use-and-conditions {
   color: black;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -153,3 +160,6 @@ a:hover {
 .row {
   max-width: 1280px;
 }
+ footer{
+  margin-left: 15vh;
+ }

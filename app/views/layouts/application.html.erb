@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ResourceFinder2</title>
+  <title>ResourceFinder</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Six+Caps" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 </head>
 <body>
   <nav class="top-bar">
     <ul class="title-area">
-      <h5 class="float-left"><%= link_to "RESOURCE FINDER", root_path %></h5>
+      <h4 class="float-left logo"><%= link_to "RESOURCE FINDER", root_path %></h4>
 
       <% if signed_in? %>
-      <li/ class="float-right"> <%= link_to "Logout", logout_path, method: :post %></li/>
+      <li/ class="float-right"> <%= link_to "Logout", logout_path, class: "logout", method: :post %></li/>
       <% end %>
-
     </ul>
   </nav>
   <% if flash.now[:notice] %>
-  <h3><%= flash.now[:notice] %></h3>
+  <p class="flash"><%= flash.now[:notice] %></p>
   <% end  %>
   <%= yield %>
-
+  <footer>
+    <div class="row">
+      <div class="small-10 medium-5 large-10 text-center columns"><small>Copyright © - 2017 - Resource Finder - All Rights Reserved.</small></div>
+  </footer>
 </body>
 </html>

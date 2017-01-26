@@ -63,33 +63,22 @@ var Form = React.createClass({
     formSubmitEvent.preventDefault();
 
     let questions = Object.values(this.state.questions);
-    // console.log(questions);
 
     let data = {};
     this.answers = questions.map(function(question) {
       data[question.key] = question.answer
     })
-
-    console.log("this is submitted info", this.state);
     let onSubmit = this.props.onSubmit
     $.ajax({
       url: "/api/v1/items.json",
       type: 'POST',
       data: {item: data},
       success: (item) => {
-        // console.log(item);
         onSubmit(item)
       }
     });
 
   },
-  // TODO:  implement cler form.
-  // handleClearForm: function (formCrearEvent){
-  //   formCrearEvent.preventDefault();
-  //   var clearform = this.setState({value: null})
-  //   console.log('this form has been clear', clearform)
-  // },
-
 
   getInitialState: function() {
     let questions = {};
@@ -122,14 +111,9 @@ var Form = React.createClass({
 
               <input ref="answer"
                 type="submit"
-                className="btn btn-primary float-right"
+                className="btn btn-primary float-right search button"
                 onClick={this.onQuestionFormSubmit}
                 value="Submit"/>
-
-              <button
-                className="btn btn-link float-left"
-                onClick={this.handleClearForm}>Clear form
-              </button>
             </div>
           </form>
         </div>

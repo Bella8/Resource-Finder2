@@ -1,11 +1,11 @@
 class SiteController < ApplicationController
-    skip_before_action :require_authentication!, :except => :root
+  skip_before_action :require_authentication!, :except => :root
   def index
     # @items = Item.all
     @items = Item.where("caseid =?", params[:caseid])
     if @items.empty? && params[:caseid].present?
-     flash.now[:notice]= "Can't find client with caseid!"
-   end
+      flash.now[:notice]= "Can't find client with caseid!"
+    end
   end
 
   def mainpage
@@ -19,7 +19,7 @@ class SiteController < ApplicationController
 
 
   def search
-      @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
   def edit
   end
