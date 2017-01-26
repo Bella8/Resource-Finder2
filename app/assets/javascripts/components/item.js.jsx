@@ -3,6 +3,7 @@ var Item = React.createClass({
     return (
       <div className="row">
         <div className="small-12  medium-7 large-7 smaill-centered medium-centered large-centered columns client-info">
+            <h5 class><center><b>Client Information</b></center></h5>
           <p><b>Case ID:</b> {this.props.item.caseid}</p>
           <p><b>Zip code:</b> {this.props.item.zip}</p>
           <p><b>Housing type:</b> {this.props.item.housing}</p>

@@ -4,7 +4,7 @@ class SiteController < ApplicationController
     # @items = Item.all
     @items = Item.where("caseid =?", params[:caseid])
     if @items.empty? && params[:caseid].present?
-      flash.now[:notice]= "Can't find client with caseid!"
+      flash.now[:notice]= "Can't find client with Case ID #{params[:caseid]}!"
     end
   end
 

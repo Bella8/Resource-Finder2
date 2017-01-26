@@ -29,7 +29,7 @@
       <%= text_field_tag :search, params[:search], class: "search-tag", placeholder: 'SEARCH FOR A RESOURCES' %>
     </div>
     <div class="small-4 medium-3 large-4  columns ">
-      <%= text_field_tag :zip, params[:zip], class: "search-tag", placeholder: 'ENTER ZIP CODE' %>
+      <%= text_field_tag :zip, params[:zip], class: "search-tag", placeholder: 'ENTER ZIP CODE', maxLength: "5", pattern: "[0-9]{5}" %>
     </div>
     <%= submit_tag "Search", class:"search button"%>
     <% end %>
@@ -40,7 +40,7 @@
   <div class="small-12 medium-8 large-7 columns seach-text medium-centered large-centered">
     <%= form_tag root_path, :method => 'get', class: "search-from" do %>
     <div class="small-12 medium-8 large-9 columns  ">
-      <%= text_field_tag :caseid, params[:caseid], class: "search-tag", placeholder: 'SEARCH FOR A CLIENT BY CASE ID' %>
+      <%= text_field_tag :caseid, params[:caseid], class: "search-tag", placeholder: 'SEARCH FOR A CLIENT BY CASE ID', maxLength: "5", pattern: "[0-9]{5}"%>
     </div>
     <%= submit_tag "Search", class:"search button" %>
     <% end %>

@@ -26,7 +26,7 @@ var TextForm = React.createClass({
             <div className="form-group">
               <label htmlFor='name'>
                 <p>{this.props.question}</p>
-                <input ref="textinput" id='name' name='name' type='text' maxLength="5" autoFocus="true" onChange={this.updateState} required="true" />
+                <input ref="textinput" id='name' name='name' type='text' maxLength="5" pattern= "[0-9]{5}" autoFocus="true" onChange={this.updateState} required="true" />
               </label>
             </div>
           </div>

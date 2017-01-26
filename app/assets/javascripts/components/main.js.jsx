@@ -35,7 +35,7 @@ var Main = React.createClass({
         <div className="row">
           <div className="small-12 small-centered medium-11 medium-centered large-11 large-centered columns ">
             <h4 className="text-center result-tile">Results</h4>
-            <p className="text-center small-intro">Some programs may have additional eligiblitiy criteria not covered by the Resource Finder.  You should contact the program directly to determine your eligiblity.</p>
+            <p className="text-center small-intro">Some programs may have additional eligiblitiy criteria not covered by the Resource Finder.  You should contact the program directly to determine eligiblity.</p>
             <section>{url}</section>
             <br/>
             <section>{items}</section>
